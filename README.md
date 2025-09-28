@@ -1,4 +1,4 @@
-# SCORED
+# SCORED <img align="right" style="margin-left: 20px; margin-bottom: 10px;" src="./pictures/sticker.png" width="215" height="215">
 
 SCORED is a Python package for long read single-cell RNA sequencing data refinement. The SCORED method evaluates cell-cell similarity by combining SimRank similarity metrics with Gaussian kernel weights derived from cell-cell distances in the reduced-dimensional space and then leverage a Markov process to incorporate information from similar cells, enabling the inference of the true transcriptomic profile for each cell.
 
