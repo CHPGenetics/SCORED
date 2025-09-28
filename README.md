@@ -1,6 +1,6 @@
 # SCORED
 
-SCORED is a Python package for single-cell RNA sequencing data imputation using SimRank and Random Walk with Restart algorithms. It processes AnnData objects, performs quality control, builds graphs, and imputes missing data.
+SCORED is a Python package for long read single-cell RNA sequencing data refinement. The SCORED method evaluates cell-cell similarity by combining SimRank similarity metrics with Gaussian kernel weights derived from cell-cell distances in the reduced-dimensional space and then leverage a Markov process to incorporate information from similar cells, enabling the inference of the true transcriptomic profile for each cell.
 
 ## Installation
 
