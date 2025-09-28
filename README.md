@@ -6,7 +6,7 @@ Long-read single-cell sequencing provides a foundational tool opportunity to res
 
 `SCORED` is a computational method tailored for the refinement of sparse single-cell RNA isoform expression data generated from long-read sequencing technologies. It addresses the data sparsity challenge by implementing a graph-based diffusion algorithm that borrows information from functionally similar cells to infer a more complete and accurate isoform expression profile for each cell. 
 
-This repository contains the Python implementation, example usage, and experiment results of the SCORED algorithm.
+This repository contains the Python implementation, example usage, and experiment results of the `SCORED` algorithm.
 
 ## Installation
 
