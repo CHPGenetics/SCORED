@@ -66,7 +66,7 @@ refined_matrix = SCORED(
     condition_key="condition"
 )
 ```
-#### 3. Tuning the random-walk parameter
+#### 3. Tuning parameters
 
 The key hyperparameter for `SCORED` is the restart probability parameter `rwr_alpha`. Default is `rwr_alpha = 0.3`,  which is robust in most cases. 
 * Smaller values: cells borrow more information from neighbors.
