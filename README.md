@@ -18,7 +18,9 @@ pip install SCORED
 
 ## Running SCORED
 
-The `SCORED` function can be applied directly to raw Scanpy objects, with no prior normalization or preprocessing required.
+### Quick start
+
+The `SCORED` function can be applied directly to raw AnnData objects, with no prior normalization or preprocessing required.
 
 ```python
 import scanpy as sc
@@ -26,28 +28,72 @@ import torch
 from scored import SCORED
 
 # Load your AnnData object
-adata = sc.read_h5ad("your_data.h5ad")
+adata_transcript = sc.read_h5ad("isoform_level_data.h5ad")
+adata_gene = sc.read_h5ad("gene_level_data.h5ad") # Gene-level UMI matrix that accompanies isoform-level data 
+# (e.g., from preprocessing pipelines such as wf-single-cell).
+# By default, gene-level data is used to infer cell similarity.
 
 # Run SCORED
-imputed_matrix = SCORED(
-    adata_tr=adata,
-    condition_key="condition",
-    device="cuda" if torch.cuda.is_available() else "cpu"
+refined_matrix = SCORED(
+    adata_tr = adata_transcript,
+    adata_g = adata_gene
+)
+
+# To replace the original data with the refined data
+adata_transcript_refined = adata_transcript.copy()
+adata_transcript_refined.X = refined_matrix
+```
+
+### Advanced tutorial
+
+#### 1. Isoform-level cell similarity (optional)
+
+`SCORED` can also use isoform-level expression to infer cell similarity (recommended only when sequencing depth is high and isoform-level data is of good quality):
+
+```python
+refined_matrix = SCORED(
+    adata_tr = adata_transcript
+)
+```
+#### 2. Condition-specific refinement
+
+If the AnnData object contains multiple conditions and you want to preserve subtle, condition-specific expression signatures, you can refine within each condition:
+
+```python
+refined_matrix = SCORED(
+    adata_tr = adata_transcript,
+    adata_g = adata_gene,
+    condition_key="condition"
+)
+    
+```
+#### 3. Tuning the random-walk parameter
+
+The key hyperparameter for `SCORED` is the restart probability parameter `rwr_alpha`. Default is `rwr_alpha = 0.3`,  which is robust in most cases. 
+* Smaller values: cells borrow more information from neighbors.
+* Larger values: more local information is preserved.
+
+```python
+refined_matrix = SCORED(
+    adata_tr = adata_transcript,
+    adata_g = adata_gene,
+    rwr_alpha = 0.3
+)
+    
+```
+
+#### 4. GPU acceleration
+
+`SCORED` can leverage GPU for faster runtime. If a GPU is available, set `device="cuda"`:
+
+```python
+refined_matrix = SCORED(
+    adata_tr = adata_transcript,
+    adata_g  = adata_gene,
+    device   = "cuda"
 )
 ```
 
-## Requirements
 
-- Python >= 3.8
-- scikit-learn >= 1.0
-- scipy >= 1.7
-- matplotlib >= 3.4
-- seaborn >= 0.11
-- tqdm >= 4.0
-- networkx >= 2.6
-- numpy >= 1.20
-- torch >= 1.9
-- scanpy >= 1.8
-- pandas >= 1.3
 
 
