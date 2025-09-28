@@ -40,6 +40,4 @@ imputed_matrix = SCORED(
 - scanpy >= 1.8
 - pandas >= 1.3
 
-## License
 
-MIT License
