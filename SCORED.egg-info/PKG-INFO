@@ -1,0 +1,73 @@
+Metadata-Version: 2.4
+Name: SCORED
+Version: 0.1.0
+Summary: A package for single-cell RNA sequencing data imputation using SimRank and Random Walk with Restart.
+Home-page: https://github.com/yourusername/scored
+Author: Your Name
+Author-email: Your Name <your.email@example.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: scikit-learn>=1.0
+Requires-Dist: scipy>=1.7
+Requires-Dist: matplotlib>=3.4
+Requires-Dist: seaborn>=0.11
+Requires-Dist: tqdm>=4.0
+Requires-Dist: networkx>=2.6
+Requires-Dist: numpy>=1.20
+Requires-Dist: torch>=1.9
+Requires-Dist: scanpy>=1.8
+Requires-Dist: pandas>=1.3
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# SCORED
+
+SCORED is a Python package for single-cell RNA sequencing data imputation using SimRank and Random Walk with Restart algorithms. It processes AnnData objects, performs quality control, builds graphs, and imputes missing data.
+
+## Installation
+
+```bash
+pip install SCORED
+```
+
+## Usage
+
+```python
+import scanpy as sc
+import torch
+from scored import SCORED
+
+# Load your AnnData object
+adata = sc.read_h5ad("your_data.h5ad")
+
+# Run SCORED
+imputed_matrix = SCORED(
+    adata_tr=adata,
+    condition_key="condition",
+    device="cuda" if torch.cuda.is_available() else "cpu"
+)
+```
+
+## Requirements
+
+- Python >= 3.8
+- scikit-learn >= 1.0
+- scipy >= 1.7
+- matplotlib >= 3.4
+- seaborn >= 0.11
+- tqdm >= 4.0
+- networkx >= 2.6
+- numpy >= 1.20
+- torch >= 1.9
+- scanpy >= 1.8
+- pandas >= 1.3
+
+## License
+
+MIT License

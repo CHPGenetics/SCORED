@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+SCORED.egg-info/PKG-INFO
+SCORED.egg-info/SOURCES.txt
+SCORED.egg-info/dependency_links.txt
+SCORED.egg-info/requires.txt
+SCORED.egg-info/top_level.txt
+scored/__init__.py
+scored/scored.py
