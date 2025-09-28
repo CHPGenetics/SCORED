@@ -121,7 +121,7 @@ def SCORED(
     distance_sparse  = adata_g.obsp["distances"]
     num_cells       = adjacency_sparse.shape[0]
 
-    # === STEP 4: Build condition mask (optional) ===
+    # === STEP 4: Build condition mask ===
     if condition_key is None:
         # No condition filtering: allow all edges
         adjacency_mask = np.ones((num_cells, num_cells), dtype=bool)
@@ -176,7 +176,7 @@ def SCORED(
     sim_numpy = (sim_matrix + sim_matrix.T).cpu().numpy()
 
 
-    # === STEP 6: Gaussian‐kernel weights ∩ top-k SimRank neighbors ===
+    # === STEP 6: Gaussian‐kernel weights , top-k SimRank neighbors ===
     def _gaussian_kernel_intersection(dist_sp: csr_matrix, sim_arr: np.ndarray, k_nn: int):
         D = dist_sp.toarray()
         Dt = torch.tensor(D, dtype=torch.float32, device=torch_device)
@@ -205,7 +205,7 @@ def SCORED(
 
     W_tensor = _gaussian_kernel_intersection(distance_sparse, sim_numpy, k)
 
-    # === STEP 7: Combine with SimRank & normalize rows ===
+    # === STEP 7: Combine with SimRank  ===
     combined_W = W_tensor * torch.tensor(sim_numpy, dtype=torch.float32, device=torch_device)
     combined_np = combined_W.cpu().numpy()
     W_df = pd.DataFrame(combined_np)
