@@ -1,4 +1,4 @@
-# SCORED <img align="right" style="margin-left: 20px; margin-bottom: 10px;" src="./pictures/sticker.png" width="180" height="195">
+# SCORED 
 
 ![GitHub](https://img.shields.io/github/license/CHPGenetics/SCORED) [![pypiDownloads](https://static.pepy.tech/badge/scored)](https://pepy.tech/project/scored)
 
