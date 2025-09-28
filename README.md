@@ -1,5 +1,7 @@
 # SCORED <img align="right" style="margin-left: 20px; margin-bottom: 10px;" src="./pictures/sticker.png" width="180" height="195">
 
+[![pypi-badge](https://img.shields.io/pypi/v/scored)](https://pypi.org/project/scored) ![GitHub](https://img.shields.io/github/license/CHPGenetics/SCORED) [![pypiDownloads](https://static.pepy.tech/badge/scored)](https://pepy.tech/project/scored)
+
 Long-read single-cell sequencing provides a foundational tool opportunity to resolve full-length isoform expression, but the resulting data is often characterized by profound sparsity and high levels of technical noise (dropouts). This sparsity obscures important biological signals, such as correlations between isoforms and dynamic expression trends along cellular trajectories.
 
 `SCORED` is a computational method tailored for the refinement of sparse single-cell RNA isoform expression data generated from long-read sequencing technologies. It addresses the data sparsity challenge by implementing a graph-based diffusion algorithm that borrows information from functionally similar cells to infer a more complete and accurate isoform expression profile for each cell. 
