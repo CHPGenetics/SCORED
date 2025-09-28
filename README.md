@@ -16,7 +16,7 @@ This repository contains the Python implementation, example usage, and experimen
 pip install SCORED
 ```
 
-## Usage
+## Running SCORED
 
 The `SCORED` function can be applied directly to raw Scanpy objects, with no prior normalization or preprocessing required.
 
