@@ -65,7 +65,6 @@ refined_matrix = SCORED(
     adata_g = adata_gene,
     condition_key="condition"
 )
-    
 ```
 #### 3. Tuning the random-walk parameter
 
@@ -78,8 +77,7 @@ refined_matrix = SCORED(
     adata_tr = adata_transcript,
     adata_g = adata_gene,
     rwr_alpha = 0.3
-)
-    
+) 
 ```
 
 #### 4. GPU acceleration
