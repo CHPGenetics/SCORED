@@ -4,7 +4,7 @@
 
 Long-read single-cell sequencing provides a foundational tool opportunity to resolve full-length isoform expression, but the resulting data is often characterized by profound sparsity and high levels of technical noise (dropouts). This sparsity obscures important biological signals, such as correlations between isoforms and dynamic expression trends along cellular trajectories.
 
-`SCORED` is a computational method tailored for the refinement of sparse single-cell RNA isoform expression data generated from long-read sequencing technologies. It addresses the data sparsity challenge by implementing a graph-based diffusion algorithm that borrows information from functionally similar cells to infer a more complete and accurate isoform expression profile for each cell. 
+`SCORED` (Single-Cell isOform data REfinement via graph-based Diffusion) is a computational method tailored for the refinement of sparse single-cell RNA isoform expression data generated from long-read sequencing technologies. It addresses the data sparsity challenge by implementing a graph-based diffusion algorithm that borrows information from functionally similar cells to infer a more complete and accurate isoform expression profile for each cell. 
 
 ![Overview of the SCORED algorithm](./pictures/overview.png)
 
