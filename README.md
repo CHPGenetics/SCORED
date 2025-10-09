@@ -42,7 +42,7 @@ refined_matrix = SCORED(
 # To replace the original data with the refined data
 adata_transcript_refined = adata_transcript.copy()
 adata_transcript_refined.X = refined_matrix
-# Data is normalized. Use log1p to adjust the scale if needed for your analysis.
+# Data is normalized. Use log transformation to adjust the scale if needed for your analysis.
 ```
 
 ### Advanced tutorial
