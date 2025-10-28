@@ -10,7 +10,6 @@ This repository accompanies the manuscript “Resolving isoform dynamics with a 
 
 ![Overview of the SCORED algorithm](./pictures/overview.png)
 
-This repository contains the Python implementation, example usage, and experiment results of the `SCORED` algorithm.
 
 ## Installation
 
