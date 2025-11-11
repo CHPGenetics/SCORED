@@ -29,7 +29,7 @@ import torch
 from scored import SCORED
 
 # Load your AnnData object
-adata_transcript = sc.read_h5ad("isoform_level_data.h5ad")
+adata_transcript = sc.read_h5ad("isoform_level_data.h5ad") # Isoform-level UMI matrix
 adata_gene = sc.read_h5ad("gene_level_data.h5ad") # Gene-level UMI matrix that accompanies isoform-level data 
 # (e.g., from preprocessing pipelines such as wf-single-cell).
 # By default, gene-level data is used to infer cell similarity.
