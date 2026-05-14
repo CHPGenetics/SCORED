@@ -6,7 +6,7 @@ Long-read single-cell sequencing offers a powerful opportunity to resolve full-l
 
 `SCORED` (Single-Cell isOform data REfinement via graph-based Diffusion) is a computational method tailored for the refinement of sparse single-cell RNA isoform expression data generated from long-read sequencing technologies. It addresses the data sparsity challenge by implementing a graph-based diffusion algorithm that borrows information from functionally similar cells to infer a more complete and accurate isoform expression profile for each cell. 
 
-This repository accompanies the manuscript “Resolving isoform dynamics with a combined timesnapshot DOGMA-seq and refined long-read framework,” providing all associated data processing and analytical workflows. The fully reproducible results notebook is available [here](https://raw.githack.com/CHPGenetics/SCORED/main/experiments/paper_results.html).
+This repository accompanies the manuscript “Resolving isoform dynamics with a combined timesnapshot DOGMA-seq and refined long-read framework,” providing all associated data processing and analytical workflows. The fully reproducible results notebook is available [here](https://rawcdn.githack.com/CHPGenetics/SCORED/main/experiments/paper_results.html).
 
 ![Overview of the SCORED algorithm](./pictures/overview.png)
 
