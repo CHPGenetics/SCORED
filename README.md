@@ -14,6 +14,7 @@ This repository accompanies the manuscript “Time-resolved single-cell multi-om
 ## Installation
 
 ```bash
+pip install scanpy
 pip install SCORED
 ```
 
