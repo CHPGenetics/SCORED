@@ -96,5 +96,34 @@ refined_matrix = SCORED(
 ```
 
 
+## System requirements
 
+### Hardware
+SCORED requires only a standard computer with enough RAM for the
+in-memory operations. A CUDA-capable GPU is optional and
+speeds up computation on larger datasets.
+
+### Operating system
+Tested on Linux (Ubuntu 22.04).
+
+### Software dependencies
+Python (tested on 3.13). Minimum required versions, with the versions
+SCORED has been tested on:
+
+| Package      | Required | Tested  |
+|--------------|----------|---------|
+| numpy        | ≥1.20    | 2.1.3   |
+| scipy        | ≥1.7     | 1.16.3  |
+| pandas       | ≥1.3     | 3.1.0   |
+| scikit-learn | ≥1.0     | 1.6.1   |
+| torch        | ≥1.9     | 2.11.0  |
+| scanpy       | ≥1.8     | 1.12.5  |
+| anndata      | —        | 0.13.4  |
+| networkx     | ≥2.6     | 3.7     |
+| matplotlib   | ≥3.4     | 3.10.0  |
+| seaborn      | ≥0.11    | 0.13.2  |
+| tqdm         | ≥4.0     | 4.67.3  |
+
+## Installation time
+Typical install time: ~1 minute on a standard desktop computer
 
